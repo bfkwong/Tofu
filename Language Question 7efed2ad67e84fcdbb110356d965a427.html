@@ -1,0 +1,808 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Language Question</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="7efed2ad-67e8-4fcd-bb11-0356d965a427" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🏗️</span></div><h1 class="page-title">Language Question</h1><table class="properties"><tbody><tr class="property-row property-row-person"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesPerson"><path d="M9.625,10.8465 C8.91187,10.2891 8.12088,9.926 7,9.26013 L7,8.71938 C7.21175,8.47612 7.392,8.176 7.53813,7.83213 C7.94587,7.7315 8.3125,7.33425 8.3125,7 C8.3125,6.51788 8.1095,6.32713 7.8715,6.17137 C7.8715,6.15562 7.875,6.14162 7.875,6.125 C7.875,5.41362 7.4375,3.5 5.25,3.5 C3.0625,3.5 2.625,5.4145 2.625,6.125 C2.625,6.14162 2.6285,6.15562 2.6285,6.17137 C2.3905,6.32713 2.1875,6.51788 2.1875,7 C2.1875,7.33425 2.55413,7.7315 2.96187,7.833 C3.108,8.176 3.28825,8.47612 3.5,8.71938 L3.5,9.26013 C2.37912,9.92513 1.58812,10.2882 0.875,10.8465 C0.041125,11.4984 0,12.4688 0,14 L10.5,14 C10.5,12.4688 10.4589,11.4984 9.625,10.8465 Z M13.125,7.3465 C12.4119,6.78912 11.6209,6.426 10.5,5.76013 L10.5,5.21938 C10.7118,4.97613 10.892,4.676 11.0381,4.33213 C11.4459,4.2315 11.8125,3.83425 11.8125,3.5 C11.8125,3.01787 11.6095,2.82713 11.3715,2.67138 C11.3715,2.65562 11.375,2.64162 11.375,2.625 C11.375,1.91363 10.9375,0 8.75,0 C6.5625,0 6.125,1.9145 6.125,2.625 C6.125,2.64162 6.1285,2.65562 6.1285,2.67138 C6.11188,2.68275 6.09787,2.69588 6.08125,2.70725 C7.83212,3.066 8.59688,4.54825 8.72813,5.74787 C8.97575,6.00863 9.1875,6.39625 9.1875,7 C9.1875,7.60288 8.771,8.20312 8.18388,8.51462 C8.127,8.624 8.06662,8.729 8.00275,8.82962 C8.155,8.91537 8.30025,8.99675 8.44025,9.07463 C9.08075,9.4325 9.63375,9.74137 10.164,10.1561 C10.3022,10.2638 10.4204,10.3801 10.5289,10.4991 L14,10.4991 C14,8.96875 13.9589,7.99837 13.125,7.3465 Z"></path></svg></span>Assign</th><td></td></tr><tr class="property-row property-row-select"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesSelect"><path d="M7,13 C10.31348,13 13,10.31371 13,7 C13,3.68629 10.31348,1 7,1 C3.68652,1 1,3.68629 1,7 C1,10.31371 3.68652,13 7,13 Z M3.75098,5.32278 C3.64893,5.19142 3.74268,5 3.90869,5 L10.09131,5 C10.25732,5 10.35107,5.19142 10.24902,5.32278 L7.15771,9.29703 C7.07764,9.39998 6.92236,9.39998 6.84229,9.29703 L3.75098,5.32278 Z"></path></svg></span>Status</th><td><span class="selected-value select-value-color-yellow">In progress</span></td></tr></tbody></table></header><div class="page-body"><h1 id="0577986b-ae02-4d1e-bb72-9207f796c862" class="">Introduction </h1><p id="229255fe-1e26-4cf3-95f3-be386001ca1b" class="">The following questions asks you which representation makes more sense. If you feel like neither makes sense, create your own representation </p><h2 id="2f091b96-77f2-47fd-bf4c-032129bac032" class="">Some Basics on Coding </h2><h3 id="211a69e9-1293-45db-b77f-318aa0e2f55e" class="">Types of Values </h3><p id="f2af7219-82a2-4ce6-ac94-3c206a56eb76" class="">There are three types of values in programming: <div class="indented"><ul id="3a233178-05b9-470b-8f32-b47356eab849" class="bulleted-list"><li><code>Integers</code> are numbers that don&#x27;t have a decimal place (e.g. <code>3</code>)</li></ul><ul id="6490fce9-f35c-44d1-b1a1-f364b9d035be" class="bulleted-list"><li><code>Floats</code> are numbers with a decimal place (e.g. <code>3.14159</code>)</li></ul><ul id="ac567b94-7f2e-4fff-b0c8-c014782955a7" class="bulleted-list"><li><code>Strings</code> are any characters inside quotations (e.g. <code>&quot;pie is 3.14159&quot;</code>)</li></ul><ul id="bf1b7946-83c7-4d4b-9bed-4cfaa3648dbc" class="bulleted-list"><li><code>Booleans</code> are true or false values (e.g. <code>true</code>)</li></ul><ul id="987bfef5-c42a-47d3-825a-af930b84e44f" class="bulleted-list"><li><code>Lists</code> are a collection of different values (e.g. <code>[1, 2.2, &quot;3&quot;, &quot;4&quot;, false]</code>)</li></ul></div></p><h3 id="9351efc2-a90b-4e15-a44a-d1553b5ac263" class="">Comparing Values</h3><p id="4cfb3140-b9ba-4820-a011-485203eb80d3" class="">You can compare values with the following operators: <div class="indented"><ul id="b925408e-cff8-4d1b-bfb1-2b8e7e1b7e74" class="bulleted-list"><li><code>==</code> returns a boolean (true or false) value of whether or not two values are equal </li></ul><ul id="d38a472e-5286-4769-868e-482b89f2c6f4" class="bulleted-list"><li><code>!=</code> returns a boolean (true or false) value of whether or not two values are different</li></ul><ul id="6e90892c-856d-43ed-bcb8-25119887d91a" class="bulleted-list"><li><code>&gt;</code> returns a boolean (true or false) value of whether or not the 1st value is greater than the 2nd</li></ul><ul id="658a5e73-c89a-40b1-8d27-9c7d7b0c0981" class="bulleted-list"><li><code>&lt;</code> returns a boolean (true or false) value of whether or not the 1st value is less than the 2nd</li></ul><ul id="ab7a4512-7b7d-4d4f-b4c6-c2e817988111" class="bulleted-list"><li><code>&gt;=</code> and <code>&lt;=</code> is pretty much self explanatory</li></ul></div></p><p id="94194fe6-ca4a-4222-abaa-a868b31b0451" class=""><strong>EXAMPLE </strong></p><pre id="ca465d66-532b-4246-b4be-6644d024d285" class="code"><code>print(3 == 4); 
+Output: false 
+
+print(3 == 3); 
+Output: true 
+
+print(3 == &quot;3&quot;); 
+Output: false
+
+print(3 &gt; 4); 
+Output: false</code></pre><h3 id="846e927d-edf9-4cd8-bc31-22381b82d586" class="">Variable Assignment</h3><p id="7f2262d7-28aa-4ada-97b1-c6a1047a7243" class="">You can create variables and assign it a value of any type that we specified above. The way you do it is as follows: </p><div id="24176028-c560-493e-b117-c50dc785f7b1" class="column-list"><div id="678d09a3-2142-4682-babd-7a4935b3a747" style="width:50%" class="column"><pre id="6a5a72d5-7dbf-4930-86cb-ae3259387517" class="code"><code>x = 3; </code></pre></div><div id="e55c4293-a6a4-4afe-9815-0c337fb77265" style="width:50%" class="column"><p id="c7c95ae2-078c-4446-a0bc-362898ef5aaf" class="">To the right, we created a variable named <code>x</code> and gave it a value of <code>3</code>. We used a semicolon to signify that we are done with the line. </p></div></div><p id="3a47ae2b-3e2a-4bf5-a0b7-5fb2a66fd64b" class="">We can create a variable of any name and any type. It is important to note that an assignment is a single equal sign but comparing whether two values are the same is a double equal sign. </p><p id="18052204-9ab7-4f81-b54a-418751063f1f" class="">Once you assign a variable a specific value, you can use that variable as if it was the value. Consider the following example </p><div id="f217b736-7638-4458-b173-1b08d0ea444b" class="column-list"><div id="f66581e4-fa8d-4362-813e-7fcf3c8b0137" style="width:50%" class="column"><pre id="b99e89e5-c750-4ef2-aa06-02849fe1ee94" class="code"><code>x = 3; 
+print(x == 3); 
+Output: true</code></pre></div><div id="0e25fb06-d7c2-46c6-b6e4-eb765703fe79" style="width:50%" class="column"><p id="3ebb31d7-e9d2-471a-bbdc-bce2f69d416b" class="">Here, we set the variable <code>x</code> to the value of <code>3</code> and then we used the comparison operation <code>==</code> to see whether or not <code>x</code> is equal to <code>3</code>. Since we set <code>x</code> to <code>3</code>, it is the same, so the statement <code>x == 3</code> is true. </p></div></div><p id="4f29a9df-43c6-4375-ab5b-1fdd14282111" class="">You can reset the value of a variable the same way you create a variable. Consider the following code. </p><pre id="f7f956cd-9805-451e-b309-7c152e8e5c62" class="code"><code>x = 3; 
+print(3); 
+Output: 3
+
+x = 4; 
+print(x); 
+Output: 4</code></pre><h1 id="70b503af-851b-48ae-baf6-f2e0d451621f" class="">Questions </h1><h3 id="bb41416b-2d34-46e5-a473-4b96c30e9e63" class="">1. IF Statements </h3><p id="6beea914-6c39-4ddb-8c5d-648a12df6b4f" class="">The goal of an if statement is to decide what to do base on whether or not something is true. Recall from your algebra class the idea of a piece wise function: </p><figure id="e733bca9-d571-490f-9b5a-81fe8dbb9bb6" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><mrow><mo fence="true">{</mo><mtable rowspacing="0.3599999999999999em" columnalign="left left" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>x</mi><mo>+</mo><mn>1</mn></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>x</mi><mo>≥</mo><mn>0</mn></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mi>x</mi></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>x</mi><mo>&lt;</mo><mn>0</mn></mrow></mstyle></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">f(x) = \begin{cases}
+x + 1 &amp; x \ge 0 \\
+x &amp; x &lt; 0
+\end{cases}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:3.0000299999999998em;vertical-align:-1.25003em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size4">{</span></span><span class="mord"><span class="mtable"><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.69em;"><span style="top:-3.69em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">1</span></span></span><span style="top:-2.25em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord mathdefault">x</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.19em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:1em;"></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.69em;"><span style="top:-3.69em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≥</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord">0</span></span></span><span style="top:-2.25em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.19em;"><span></span></span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></div></figure><p id="838366d6-1319-472a-b497-191aee11f360" class="">What this is saying is: <div class="indented"><p id="430ba6f4-2cae-4e4b-b6e8-f84a9b738d5e" class="">&quot;<em>if x is greater than or equal to 0, then the function is </em><em><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">x + 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span></span><span>﻿</span></span></em><em>, however if x is less than 0, then the function is </em><em><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span></span><span>﻿</span></span></em><em>.&quot;</em></p></div></p><p id="206f07a1-a4a4-47eb-bbdb-0bc609e101f3" class="">Base on this formulation, which of the following is the clearest representation of this idea. </p><div id="1e3ea43b-ba15-4a95-8f20-cbf030b0c476" class="column-list"><div id="67cc7db2-a7c8-4e9d-92e4-859bbc929b80" style="width:33.333333333333336%" class="column"><p id="0203ad08-c85a-457a-a993-9f666dd6dd0f" class="">A) </p><pre id="be00a744-5f7e-484c-8da5-48408ecf968a" class="code"><code>if (x &gt;= 0) 
+{
+	x + 1; 
+} 
+else 
+{
+	x;
+}</code></pre></div><div id="77ce78ce-d63a-4593-b3e8-0fcc809e471b" style="width:33.333333333333336%" class="column"><p id="2c31fa46-030f-4b3f-afa6-266d4e5672d7" class="">B) </p><pre id="87e5bb17-1e05-4f30-b612-dada36d292ae" class="code"><code>if (x &gt;= 0) then 
+{
+	x + 1; 
+} 
+else 
+{
+	x; 
+}</code></pre><p id="03b998b1-a69a-4ec3-b26e-324d1ce25af0" class="">
+</p></div><div id="92418ccd-5828-4827-8615-912e36c0a321" style="width:33.33333333333333%" class="column"><p id="3382de60-e4c7-4c97-98b9-a975ccc9c400" class="">C) </p><pre id="127654af-758b-40e1-9a23-837fb8ca82ae" class="code"><code>if (x &gt;= 0) then
+{
+	x + 1; 
+} 
+or else 
+{
+	x; 
+}</code></pre><p id="19a191bc-c3cd-4518-a16f-2c38b26c8772" class="">
+</p></div></div><p id="a9562043-3cc3-44e1-8eee-9d8501da2b65" class="">D) if none of them are clear, what do you suggest is the best representation of this idea</p><pre id="71ef40b8-c97d-45c6-9511-0fea817b7af0" class="code"><code> 
+
+
+
+</code></pre><h2 id="a5417468-8a2b-45c1-a393-408bf3ba98dc" class="">2. Functions </h2><p id="3e0cf7cc-c285-4f69-a8a8-6f14d72a8c29" class="">In programming, functions are reusable pieces of code that takes inputs and spits out output. Recall from your algebra class that a function may look like </p><figure id="c3b932ec-dbdf-404c-a26f-fe471dd79661" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo stretchy="false">)</mo><mo>=</mo><mn>3</mn><mi>x</mi><mo>+</mo><mn>4</mn><mi>y</mi><mo>+</mo><mn>10</mn></mrow><annotation encoding="application/x-tex">f(x,y) = 3x + 4y + 10</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">3</span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">4</span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span></span></span></span></span></div></figure><p id="2918870b-af8f-46fa-9f0d-468542bf4cdd" class="">What this is saying is: <div class="indented"><p id="7362b408-e7d2-42d1-bf3d-6acca98d1e7b" class=""><em>Given two inputs </em><em><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(x,y) </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mclose">)</span></span></span></span></span><span>﻿</span></span></em><em>, the output of </em><em><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi></mrow><annotation encoding="application/x-tex">f</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span></span></span></span></span><span>﻿</span></span></em><em> will be </em><em><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mi>x</mi><mo>+</mo><mn>4</mn><mi>y</mi><mo>+</mo><mn>10</mn></mrow><annotation encoding="application/x-tex">3x + 4y + 10</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">3</span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">4</span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span></span></span></span></span><span>﻿</span></span></em><em>. </em></p></div></p><p id="e61bb795-bb37-4a49-aaa0-225b8bc79f95" class="">Base on this formulation, which of the following is the clearest representation of this idea. </p><p id="2bc5f9e5-71ed-4606-91f7-9f2bcf9370b5" class="">A) </p><pre id="98de4830-56d5-4342-9bce-a86ca0107f79" class="code"><code>f(x,y) = 3 * x + 4 * y + 10; </code></pre><p id="0830142f-c868-4f5f-8f41-09575c9bd209" class="">B) </p><pre id="f28c7b90-bce4-4376-8def-388905b505a2" class="code"><code>f(x,y) = { 3 * x + 4 * y + 10; }</code></pre><p id="ee9001d5-cc1a-4f6f-aba4-9e7f26a509b7" class="">C) </p><pre id="be969da1-c9ac-4202-bd7f-d7bace830f00" class="code"><code>function f(x,y) = {
+	3 * 4 + 4 * y + 10; 
+}</code></pre><p id="35d0e08e-7b53-4e48-bfe0-f02c9418bde3" class="">D) if none of them are clear, what do you suggest is the best representation of this idea</p><pre id="da255d5d-8c24-4d04-b349-1a296cef061c" class="code"><code>
+
+
+
+</code></pre><h2 id="05bda3c4-cbd0-47c7-82b3-64135923e03a" class="">3. FOR loops </h2><p id="a7e5d811-3820-45bf-ae67-5c94ebc683aa" class=""><strong>The for loop is a way to enumerate every item in a list. This is the loop you would want to use if you want to do something to a list one by one.</strong> Consider the following list of drinks that are on sale at your local grocery market: </p><pre id="3a9f899b-bf84-462f-9465-5e6bb3ef4479" class="code"><code>availableDrinks = [
+	&quot;Stella Rosa Black&quot;, 
+	&quot;Smirnoff Ice&quot;,
+	&quot;White Claw&quot;, 
+	&quot;3 Buck Chuck&quot;, 
+	&quot;Jack Daniels&quot;, 
+	&quot;Trivento Amado Sur&quot;
+] </code></pre><p id="36627eb5-0101-4a01-bba0-1601814e2e0d" class="">Say we want to write a program that checks whether your favorite drink is available, if it is, you want to print out a message that says &quot;the drink is available&quot;. If we were to do this logically, we would go through the list one by one and see if it is our favorite drink. Your thinking might go something like this: <div class="indented"><p id="41092980-d84e-4088-aae7-69fe9c716f48" class=""><em>My favorite drink is White Claw, 
+Is the first drink White Claw? No, it is Stella Rosa Black. so we keep going. 
+Is the second drink White Claw? No, it is Smirnoff Ice. so we keep going. 
+Is the third drink White Claw? Yes! The drink is available!</em></p></div></p><p id="32a4f857-c616-4684-b415-153fdcd3525c" class="">Notice that for every item we come across in the list, we do the same thing: we ask if it is white claw, if it is, then we are done, if it is not, we keep searching. </p><p id="098c97f3-12c7-453e-9b72-df90f9c9ea4f" class="">Base on this formulation, which of the following is the clearest representation of this idea. </p><p id="a7e2c60b-811a-4e96-88b9-20709929794f" class="">A) </p><pre id="7a614989-50b7-443a-9854-613a0f505ea7" class="code"><code>for each drink in availableDrinks {
+	if (drink == &quot;White Claw&quot;) then 
+	{
+		print(&quot;Drink is available!); 
+		done; 
+	} 
+}</code></pre><p id="f5669a61-b897-4cc3-b4fb-7f00594196a2" class="">B) </p><pre id="36144acf-8882-4824-a268-fdb3cc0800af" class="code"><code>for each drink in availableDrinks do {
+	if (drink == &quot;White Claw&quot;) then 
+	{
+		print(&quot;Drink is available!&quot;);
+		end loop; 
+	} 
+	else 
+	{
+		keep going; 
+	}
+}</code></pre><p id="275c8bbe-0ba4-4d3f-b9a3-7674e172b662" class="">C) if none of them are clear, what do you suggest is the best representation of this idea</p><pre id="f0f705e3-34f6-4ec4-b786-1c815cdabbf2" class="code"><code>
+
+
+
+
+
+</code></pre><h2 id="af249e15-3d25-476f-ad0f-82c17a037daf" class="">4. Create your own Type </h2><p id="4b6dc132-16b9-493e-833b-20e91e291b7f" class="">In programming, you can create your own type that is similar to Integers, Booleans, Floats, and Strings. To do this, you have to specify what characteristics the type has and what it can do. Consider if we want to create a <code>Car</code>. We would need a blueprint for a car that defines what functions and characteristics the car has.</p><div id="8c6d86b0-9175-4d64-9069-404d8decd32c" class="column-list"><div id="fe5d21fe-7e51-4aee-90fe-59af636f5b67" style="width:50%" class="column"><p id="4bf27c74-294c-4fa2-8070-2533555ba84c" class=""><strong>Characteristic of a Car
+•  </strong>Color
+•  Make 
+•  Model 
+•  Year
+•  Mileage</p></div><div id="e8f74864-42bc-48ab-aa98-77667b6ff979" style="width:50%" class="column"><p id="5f13b8c3-7303-4c60-8509-91125423b505" class=""><strong>Functions of a Car
+</strong>•  Start
+•  Shutoff
+•  Enter Drive
+•  Enter Reverse
+•  Construct the car</p></div></div><p id="d569db3f-5b29-4622-949e-ac481a02a094" class="">Base on this formulation, which of the following is the clearest representation of a car</p><p id="3318af5f-fe2f-4614-a912-ed8963b10f66" class="">A) </p><pre id="5009d881-8bf3-46a0-b684-b26e0284762b" class="code"><code>blueprint for Car {
+	construct(color, make, model, year, mileage) = {
+		Car&#x27;s color = color; 
+		Car&#x27;s make = make; 
+		Car&#x27;s model = model; 
+		Car&#x27;s year = year; 
+		Car&#x27;s mileage = mileage; 
+
+		Car&#x27;s onOffStatus = &quot;off&quot;; 
+		Car&#x27;s drive = &quot;P&quot;; 
+	}
+
+	start() = {
+		Car&#x27;s onOffStatus = &quot;on&quot;; 
+	}
+
+	shutoff() = {
+		Car&#x27;s drive = &quot;P&quot;; 
+		Car&#x27;s onOffStatus = &quot;off&quot;; 
+	}
+
+	enterReverse = {
+		Car&#x27;s drive = &quot;R&quot;; 
+	}
+
+	enterDrive = {
+		Car&#x27;s drive = &quot;D&quot;; 
+	}
+}</code></pre><p id="94be590d-96ae-4d00-937d-fb9388131944" class="">B) </p><pre id="965cb908-84fe-4880-b22e-1f28fef2d624" class="code"><code>blueprint for Car {
+	construct(color, make, model, year, mileage) = {
+		Car&#x27;s color = color; 
+		Car&#x27;s make = make; 
+		Car&#x27;s model = model; 
+		Car&#x27;s year = year; 
+		Car&#x27;s mileage = mileage; 
+
+		Car&#x27;s onOffStatus = &quot;off&quot;; 
+		Car&#x27;s drive = &quot;P&quot;; 
+	}
+
+	start() = {
+		Car&#x27;s onOffStatus = &quot;on&quot;; 
+	}
+
+	shutoff() = {
+		Car&#x27;s drive = &quot;P&quot;; 
+		Car&#x27;s onOffStatus = &quot;off&quot;; 
+	}
+
+	enterReverse = {
+		Car&#x27;s drive = &quot;R&quot;; 
+	}
+
+	enterDrive = {
+		Car&#x27;s drive = &quot;D&quot;; 
+	}
+}</code></pre><p id="eae81f5a-d989-46c7-a788-bf86d563b844" class="">C) </p><pre id="edb3fe56-d4e2-45b1-983a-f473ed4cea6f" class="code"><code>blueprint for Car {
+	construct(color, make, model, year, mileage) = {
+		self.color = color; 
+		self.make = make; 
+		self.model = model; 
+		self.year = year; 
+		self.mileage = mileage; 
+
+		self.onOffStatus = &quot;off&quot;; 
+		self.drive = &quot;P&quot;; 
+	}
+
+	start() = {
+		self.onOffStatus = &quot;on&quot;; 
+	}
+
+	shutoff() = {
+		self.drive = &quot;P&quot;; 
+		self.onOffStatus = &quot;off&quot;; 
+	}
+
+	enterReverse = {
+		self.drive = &quot;R&quot;; 
+	}
+
+	enterDrive = {
+		self.drive = &quot;D&quot;; 
+	}
+}</code></pre><p id="85a0d34e-ebcf-427e-ae62-3735a46fec80" class="">C) if none of them are clear, what do you suggest is the best representation of this idea</p><pre id="02ff2246-ee3c-4c27-af31-5b8ce89eadb5" class="code"><code>
+
+
+
+
+
+</code></pre></div></article></body></html>
