@@ -12,6 +12,9 @@ public class TofuBaseListener implements TofuListener {
 	@Override public void enterUnaryOp(TofuParser.UnaryOpContext ctx) { }
 	@Override public void exitUnaryOp(TofuParser.UnaryOpContext ctx) { }
 
+	@Override public void enterProgram(TofuParser.ProgramContext ctx) { }
+	@Override public void exitProgram(TofuParser.ProgramContext ctx) { }
+
 	@Override public void enterCallMemExpression(TofuParser.CallMemExpressionContext ctx) { }
 	@Override public void exitCallMemExpression(TofuParser.CallMemExpressionContext ctx) { }
 
@@ -24,14 +27,20 @@ public class TofuBaseListener implements TofuListener {
 	@Override public void enterMultOp(TofuParser.MultOpContext ctx) { }
 	@Override public void exitMultOp(TofuParser.MultOpContext ctx) { }
 
-	@Override public void enterFunDecls(TofuParser.FunDeclsContext ctx) { }
-	@Override public void exitFunDecls(TofuParser.FunDeclsContext ctx) { }
+	@Override public void enterFunDecl(TofuParser.FunDeclContext ctx) { }
+	@Override public void exitFunDecl(TofuParser.FunDeclContext ctx) { }
 
 	@Override public void enterMultExpression(TofuParser.MultExpressionContext ctx) { }
 	@Override public void exitMultExpression(TofuParser.MultExpressionContext ctx) { }
 
 	@Override public void enterUnaryExpression(TofuParser.UnaryExpressionContext ctx) { }
 	@Override public void exitUnaryExpression(TofuParser.UnaryExpressionContext ctx) { }
+
+	@Override public void enterClassDecls(TofuParser.ClassDeclsContext ctx) { }
+	@Override public void exitClassDecls(TofuParser.ClassDeclsContext ctx) { }
+
+	@Override public void enterRetStmt(TofuParser.RetStmtContext ctx) { }
+	@Override public void exitRetStmt(TofuParser.RetStmtContext ctx) { }
 
 	@Override public void enterPrimaryExpression(TofuParser.PrimaryExpressionContext ctx) { }
 	@Override public void exitPrimaryExpression(TofuParser.PrimaryExpressionContext ctx) { }
@@ -59,9 +68,6 @@ public class TofuBaseListener implements TofuListener {
 
 	@Override public void enterLogANDExpression(TofuParser.LogANDExpressionContext ctx) { }
 	@Override public void exitLogANDExpression(TofuParser.LogANDExpressionContext ctx) { }
-
-	@Override public void enterR(TofuParser.RContext ctx) { }
-	@Override public void exitR(TofuParser.RContext ctx) { }
 
 	@Override public void enterEqExpression(TofuParser.EqExpressionContext ctx) { }
 	@Override public void exitEqExpression(TofuParser.EqExpressionContext ctx) { }

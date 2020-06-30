@@ -9,6 +9,9 @@ public interface TofuListener extends ParseTreeListener {
 	void enterUnaryOp(TofuParser.UnaryOpContext ctx);
 	void exitUnaryOp(TofuParser.UnaryOpContext ctx);
 
+	void enterProgram(TofuParser.ProgramContext ctx);
+	void exitProgram(TofuParser.ProgramContext ctx);
+
 	void enterCallMemExpression(TofuParser.CallMemExpressionContext ctx);
 	void exitCallMemExpression(TofuParser.CallMemExpressionContext ctx);
 
@@ -21,14 +24,20 @@ public interface TofuListener extends ParseTreeListener {
 	void enterMultOp(TofuParser.MultOpContext ctx);
 	void exitMultOp(TofuParser.MultOpContext ctx);
 
-	void enterFunDecls(TofuParser.FunDeclsContext ctx);
-	void exitFunDecls(TofuParser.FunDeclsContext ctx);
+	void enterFunDecl(TofuParser.FunDeclContext ctx);
+	void exitFunDecl(TofuParser.FunDeclContext ctx);
 
 	void enterMultExpression(TofuParser.MultExpressionContext ctx);
 	void exitMultExpression(TofuParser.MultExpressionContext ctx);
 
 	void enterUnaryExpression(TofuParser.UnaryExpressionContext ctx);
 	void exitUnaryExpression(TofuParser.UnaryExpressionContext ctx);
+
+	void enterClassDecls(TofuParser.ClassDeclsContext ctx);
+	void exitClassDecls(TofuParser.ClassDeclsContext ctx);
+
+	void enterRetStmt(TofuParser.RetStmtContext ctx);
+	void exitRetStmt(TofuParser.RetStmtContext ctx);
 
 	void enterPrimaryExpression(TofuParser.PrimaryExpressionContext ctx);
 	void exitPrimaryExpression(TofuParser.PrimaryExpressionContext ctx);
@@ -56,9 +65,6 @@ public interface TofuListener extends ParseTreeListener {
 
 	void enterLogANDExpression(TofuParser.LogANDExpressionContext ctx);
 	void exitLogANDExpression(TofuParser.LogANDExpressionContext ctx);
-
-	void enterR(TofuParser.RContext ctx);
-	void exitR(TofuParser.RContext ctx);
 
 	void enterEqExpression(TofuParser.EqExpressionContext ctx);
 	void exitEqExpression(TofuParser.EqExpressionContext ctx);

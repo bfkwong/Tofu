@@ -1,11 +1,11 @@
 grammar Tofu;
 
-program: (funDecls | classDecls | stmt)*;
+program: (funDecl | classDecls | stmt)*;
 
 classDecls:
-	'blueprint' 'for' IDENTIFIER '{' (funDecls | stmt)* '}';
+	'blueprint' 'for' IDENTIFIER '{' (funDecl | stmt)* '}';
 
-funDecls:
+funDecl:
 	IDENTIFIER '(' parameterList ')' '=' '{' stmt* '}'
 	| IDENTIFIER '(' parameterList ')' '=' expStmt;
 
@@ -51,7 +51,12 @@ multExpression: unaryExpression (multOp unaryExpression)?;
 unaryExpression: unaryOp? callMemExpression;
 
 callMemExpression:
-	primaryExpression (arguments | '\'s ' IDENTIFIER)*;
+	primaryExpression (
+		arguments
+		| '\'s ' IDENTIFIER
+		| '.' IDENTIFIER
+		| 'does' IDENTIFIER
+	)*;
 
 arguments: '(' argumentList ')';
 
@@ -60,10 +65,12 @@ argumentList: (expression (',' expression)*)?;
 primaryExpression:
 	'(' expression ')'
 	| NUMBER
-	| BOOLEAN
+	| TRUE
+	| FALSE
 	| STRING
 	| UNDEFINED
-	| IDENTIFIER;
+	| IDENTIFIER
+	| 'make' IDENTIFIER;
 
 eqOp: '==' | '!=';
 
@@ -75,7 +82,9 @@ multOp: '*' | '/';
 
 unaryOp: '!' | '-';
 
-BOOLEAN: 'true' | 'false';
+TRUE: 'true';
+
+FALSE: 'false';
 
 UNDEFINED: 'undefined';
 
