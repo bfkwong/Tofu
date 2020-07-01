@@ -30,7 +30,7 @@ ifStmt:
 		'or' 'else' blockStmt
 	)?;
 
-printStmt: 'print' '(' expression ')' ';';
+printStmt: 'print' '(' expression? ')' ';';
 
 iterationStmt: 'while' '(' expression ')' 'is' 'true' blockStmt;
 

@@ -15,5 +15,7 @@ blueprint for Tofu {
 }
 
 tofu = make Tofu(100, "extra firm"); 
+
 tofu does fry(); 
 tofu's volumn; 
+
