@@ -70,7 +70,8 @@ primaryExpression:
 	| STRING
 	| UNDEFINED
 	| IDENTIFIER
-	| 'make' IDENTIFIER;
+	| 'make' IDENTIFIER
+	| '[' (expression (',' expression))? ']';
 
 eqOp: '==' | '!=';
 
